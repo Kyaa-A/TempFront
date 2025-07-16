@@ -226,8 +226,6 @@
     @apply border-warning focus:ring-warning;
   }
 
-
-
   /* Typography - Hero text */
   .text-civic-hero {
     @apply text-xl lg:text-2xl xl:text-3xl font-bold text-foreground;

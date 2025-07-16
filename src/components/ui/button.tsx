@@ -22,7 +22,7 @@ const buttonVariants = cva(
         warning:
           "bg-warning text-white shadow-xs hover:bg-warning/90 focus-visible:ring-warning/20",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+          "hover:bg-primary hover:text-primary-foreground dark:hover:bg-primary/50",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

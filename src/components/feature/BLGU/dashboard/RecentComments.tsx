@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { MessageCircle, Eye } from "lucide-react";
 
 export const RecentComments = () => {
   const comments = [
@@ -23,22 +24,22 @@ export const RecentComments = () => {
   ];
 
   return (
-    <Card className="p-4 sm:p-6">
-      <div className="mb-6">
+    <Card className="p-3 sm:p-4 border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm">
+      <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-          <span className="mr-2">💬</span>
+          <MessageCircle className="mr-2 h-5 w-5 text-red-600" />
           <span className="truncate">Recent Comments from Your Assessor</span>
         </h3>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className="border-b border-gray-200 pb-4 last:border-b-0"
+            className="border-b border-red-100 pb-3 last:border-b-0"
           >
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
-              <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm font-medium inline-block w-fit">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1 gap-2">
+              <div className="bg-gradient-to-r from-red-100 to-orange-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium inline-block w-fit border border-red-200">
                 {comment.id}
               </div>
               <span className="text-sm text-gray-500 flex-shrink-0">
@@ -52,9 +53,13 @@ export const RecentComments = () => {
         ))}
       </div>
 
-      <div className="mt-6">
-        <Button variant="outline" className="w-full sm:w-auto">
-          📝 View All Comments
+      <div className="mt-4">
+        <Button
+          variant="destructive"
+          className="w-full sm:w-auto font-semibold"
+        >
+          <Eye className="h-5 w-5" />
+          View All Comments
         </Button>
       </div>
     </Card>
