@@ -30,6 +30,8 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -55,59 +57,65 @@
 :root {
   /* Border radius */
   --radius: 0.625rem;
-  
+
   /* Background colors */
-  --background: #001d39;
-  --foreground: #0a4174;
-  
+  --background: #f8f9fa;
+  --foreground: #212529;
+
   /* Card styling */
-  --card: #bdd8e9;
-  --card-foreground: #001d39;
-  
+  --card: #ffffff;
+  --card-foreground: #212529;
+
   /* Popover styling */
-  --popover: #bdd8e9;
-  --popover-foreground: #001d39;
-  
-  /* Primary colors */
-  --primary: #0a4174;
-  --primary-foreground: #bdd8e9;
-  
-  /* Secondary colors */
-  --secondary: #49769f;
-  --secondary-foreground: #bdd8e9;
-  
+  --popover: #ffffff;
+  --popover-foreground: #212529;
+
+  /* Primary colors - DILG Blue */
+  --primary: #1a3a6d;
+  --primary-foreground: #ffffff;
+
+  /* Secondary colors - Action Blue */
+  --secondary: #0d6efd;
+  --secondary-foreground: #ffffff;
+
   /* Muted colors */
-  --muted: #6ea2b3;
-  --muted-foreground: #001d39;
-  
+  --muted: #f8f9fa;
+  --muted-foreground: #6c757d;
+
   /* Accent colors */
-  --accent: #7bbde8;
-  --accent-foreground: #001d39;
-  
-  /* Destructive/error colors */
-  --destructive: #ea4335;
-  
+  --accent: #0d6efd;
+  --accent-foreground: #ffffff;
+
+  /* Destructive/error colors - Danger/Fail Red */
+  --destructive: #dc3545;
+
+  /* Success color - Pass Green */
+  --success: #28a745;
+
+  /* Warning color - Rework/Conditional Orange */
+  --warning: #fd7e14;
+
   /* Border and input styling */
-  --border: #4e8ea2;
-  --input: #4e8ea2;
-  --ring: #0a4174;
-  
+  --border: #dee2e6;
+  --input: #dee2e6;
+  --ring: #1a3a6d;
+
   /* Chart colors */
-  --chart-1: #001d39;
-  --chart-2: #0a4174;
-  --chart-3: #49769f;
-  --chart-4: #4e8ea2;
-  --chart-5: #6ea2b3;
-  
+  --chart-1: #1a3a6d;
+  --chart-2: #0d6efd;
+  --chart-3: #28a745;
+  --chart-4: #fd7e14;
+  --chart-5: #dc3545;
+
   /* Sidebar colors */
-  --sidebar: #0a4174;
-  --sidebar-foreground: #bdd8e9;
-  --sidebar-primary: #001d39;
-  --sidebar-primary-foreground: #bdd8e9;
-  --sidebar-accent: #7bbde8;
-  --sidebar-accent-foreground: #001d39;
-  --sidebar-border: #4e8ea2;
-  --sidebar-ring: #0a4174;
+  --sidebar: #1a3a6d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0d6efd;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0d6efd;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #dee2e6;
+  --sidebar-ring: #1a3a6d;
 }
 
 /* ==========================================================================
@@ -116,57 +124,63 @@
 
 .dark {
   /* Background colors */
-  --background: #001d39;
-  --foreground: #bdd8e9;
-  
+  --background: #212529;
+  --foreground: #f8f9fa;
+
   /* Card styling */
-  --card: #0a4174;
-  --card-foreground: #bdd8e9;
-  
+  --card: #343a40;
+  --card-foreground: #f8f9fa;
+
   /* Popover styling */
-  --popover: #0a4174;
-  --popover-foreground: #bdd8e9;
-  
-  /* Primary colors */
-  --primary: #7bbde8;
-  --primary-foreground: #001d39;
-  
-  /* Secondary colors */
-  --secondary: #49769f;
-  --secondary-foreground: #bdd8e9;
-  
+  --popover: #343a40;
+  --popover-foreground: #f8f9fa;
+
+  /* Primary colors - DILG Blue (slightly lighter for dark mode) */
+  --primary: #4a6fa5;
+  --primary-foreground: #ffffff;
+
+  /* Secondary colors - Action Blue */
+  --secondary: #0d6efd;
+  --secondary-foreground: #ffffff;
+
   /* Muted colors */
-  --muted: #4e8ea2;
-  --muted-foreground: #bdd8e9;
-  
+  --muted: #495057;
+  --muted-foreground: #adb5bd;
+
   /* Accent colors */
-  --accent: #6ea2b3;
-  --accent-foreground: #001d39;
-  
-  /* Destructive/error colors */
-  --destructive: #ea4335;
-  
+  --accent: #0d6efd;
+  --accent-foreground: #ffffff;
+
+  /* Destructive/error colors - Danger/Fail Red */
+  --destructive: #dc3545;
+
+  /* Success color - Pass Green */
+  --success: #28a745;
+
+  /* Warning color - Rework/Conditional Orange */
+  --warning: #fd7e14;
+
   /* Border and input styling */
-  --border: #4e8ea2;
-  --input: #4e8ea2;
-  --ring: #bdd8e9;
-  
+  --border: #495057;
+  --input: #495057;
+  --ring: #4a6fa5;
+
   /* Chart colors */
-  --chart-1: #bdd8e9;
-  --chart-2: #7bbde8;
-  --chart-3: #6ea2b3;
-  --chart-4: #4e8ea2;
-  --chart-5: #49769f;
-  
+  --chart-1: #4a6fa5;
+  --chart-2: #0d6efd;
+  --chart-3: #28a745;
+  --chart-4: #fd7e14;
+  --chart-5: #dc3545;
+
   /* Sidebar colors */
-  --sidebar: #001d39;
-  --sidebar-foreground: #bdd8e9;
-  --sidebar-primary: #0a4174;
-  --sidebar-primary-foreground: #bdd8e9;
-  --sidebar-accent: #7bbde8;
-  --sidebar-accent-foreground: #001d39;
-  --sidebar-border: #4e8ea2;
-  --sidebar-ring: #bdd8e9;
+  --sidebar: #1a3a6d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0d6efd;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0d6efd;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #495057;
+  --sidebar-ring: #4a6fa5;
 }
 
 /* ==========================================================================
@@ -189,42 +203,69 @@
 @layer components {
   /* Input field base styling */
   .input-base {
-    @apply block w-full px-2 lg:px-3 xl:px-4 py-1.5 lg:py-2 xl:py-2.5 border border-gray-300 rounded-md lg:rounded-lg xl:rounded-xl bg-white placeholder-gray-400 text-gray-900 text-xs lg:text-sm xl:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-400 hover:shadow-sm;
+    @apply block w-full px-2 lg:px-3 xl:px-4 py-1.5 lg:py-2 xl:py-2.5 border border-input rounded-md lg:rounded-lg xl:rounded-xl bg-card placeholder-muted-foreground text-foreground text-xs lg:text-sm xl:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-border hover:shadow-sm;
   }
 
   /* Input field focus state */
   .input-base:focus {
-    @apply shadow-md ring-blue-500/20;
+    @apply shadow-md ring-primary/20;
   }
 
   /* Input field error state */
   .input-base.error {
-    @apply border-red-500 focus:ring-red-500;
+    @apply border-destructive focus:ring-destructive;
   }
 
-  /* Primary button styling */
-  .btn-primary {
-    @apply w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium py-1.5 lg:py-2 xl:py-2.5 px-3 lg:px-4 rounded-md lg:rounded-lg xl:rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98];
+  /* Input field success state */
+  .input-base.success {
+    @apply border-success focus:ring-success;
   }
 
-  /* Secondary button styling */
-  .btn-secondary {
-    @apply w-full border border-gray-300 bg-white hover:bg-gray-50 active:bg-gray-100 text-gray-700 font-medium py-1.5 lg:py-2 xl:py-2.5 px-3 lg:px-4 rounded-md lg:rounded-lg xl:rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transform hover:scale-[1.02] active:scale-[0.98];
+  /* Input field warning state */
+  .input-base.warning {
+    @apply border-warning focus:ring-warning;
   }
+
+
 
   /* Typography - Hero text */
   .text-civic-hero {
-    @apply text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900;
+    @apply text-xl lg:text-2xl xl:text-3xl font-bold text-foreground;
   }
 
   /* Typography - Subtitle text */
   .text-civic-subtitle {
-    @apply text-xs lg:text-sm xl:text-base text-gray-600;
+    @apply text-xs lg:text-sm xl:text-base text-muted-foreground;
   }
 
   /* Typography - Body text */
   .text-civic-body {
-    @apply text-xs lg:text-sm xl:text-base text-gray-700;
+    @apply text-xs lg:text-sm xl:text-base text-foreground;
+  }
+
+  /* Typography - Primary text (DILG Blue) */
+  .text-civic-primary {
+    @apply text-xs lg:text-sm xl:text-base text-primary font-medium;
+  }
+
+  /* Typography - Secondary text (Action Blue) */
+  .text-civic-secondary {
+    @apply text-xs lg:text-sm xl:text-base text-secondary font-medium;
+  }
+
+  /* Typography - Success text (Pass Green) */
+  .text-civic-success {
+    @apply text-xs lg:text-sm xl:text-base text-success font-medium;
+  }
+
+  /* Typography - Warning text (Rework/Conditional Orange) */
+  .text-civic-warning {
+    @apply text-xs lg:text-sm xl:text-base text-warning font-medium;
+  }
+
+  /* Typography - Danger text (Fail Red) */
+  .text-civic-danger {
+    @apply text-xs lg:text-sm xl:text-base text-destructive font-medium;
   }
 }
 

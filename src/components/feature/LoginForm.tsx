@@ -96,7 +96,7 @@ export function LoginForm() {
           <div className="pt-1 lg:pt-2">
             <Button
               type="submit"
-              className="btn-primary h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
+              className="w-full h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
             >
               Sign in
             </Button>
@@ -117,8 +117,8 @@ export function LoginForm() {
           {/* Google Sign In */}
           <Button
             type="button"
-            variant="outline"
-            className="btn-secondary h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
+            variant="secondary"
+            className="w-full h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
           >
             <FaGoogle className="w-3 h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 mr-1 lg:mr-2" />
             Sign in with Google
