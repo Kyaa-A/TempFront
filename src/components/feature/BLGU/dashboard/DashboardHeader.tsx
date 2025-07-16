@@ -9,7 +9,7 @@ interface DashboardHeaderProps {
 
 export const DashboardHeader = ({ onMenuToggle }: DashboardHeaderProps) => {
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-red-100 sticky top-0 z-30 shadow-sm">
+    <header className="bg-white/95 backdrop-blur-sm border-b border-red-100 sticky top-0 z-40 shadow-sm">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">

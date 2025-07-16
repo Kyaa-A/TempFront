@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { BarChart3, FileText, User, X, LogOut } from "lucide-react";
 
@@ -9,11 +10,26 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const menuItems = [
-    { icon: BarChart3, label: "Dashboard", active: true },
-    { icon: FileText, label: "My Assessment", active: false },
-    { icon: User, label: "Profile", active: false },
+    { icon: BarChart3, label: "Dashboard", href: "/BLGU/dashboard" },
+    { icon: FileText, label: "My Assessment", href: "/BLGU/myAssessment" },
+    { icon: User, label: "Profile", href: "/BLGU/profile" },
   ];
+
+  const handleNavigation = (href: string) => {
+    router.push(href);
+    // Close sidebar on mobile after navigation
+    if (window.innerWidth < 1024) {
+      onToggle();
+    }
+  };
+
+  const handleLogout = () => {
+    router.push("/auth/login");
+  };
 
   return (
     <>
@@ -67,11 +83,13 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             <nav className="space-y-2">
               {menuItems.map((item, index) => {
                 const IconComponent = item.icon;
+                const isActive = pathname === item.href;
                 return (
                   <button
                     key={index}
+                    onClick={() => handleNavigation(item.href)}
                     className={`w-full flex items-center px-4 py-3 text-left rounded-lg transition-all duration-200 ${
-                      item.active
+                      isActive
                         ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg"
                         : "text-gray-700 hover:bg-red-50 hover:text-red-600"
                     }`}
@@ -88,6 +106,7 @@ export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
 
           <div className="p-6 flex-shrink-0">
             <Button
+              onClick={handleLogout}
               variant="destructive"
               className="w-full flex items-center justify-start font-semibold"
             >

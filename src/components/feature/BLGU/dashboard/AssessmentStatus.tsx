@@ -1,8 +1,15 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export const AssessmentStatus = () => {
+  const router = useRouter();
+
+  const handleContinueAssessment = () => {
+    router.push("/BLGU/myAssessment");
+  };
+
   return (
     <Card className="p-3 sm:p-4 border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm">
       <div className="mb-4">
@@ -26,6 +33,7 @@ export const AssessmentStatus = () => {
             variant="destructive"
             size="lg"
             className="w-full sm:w-auto font-semibold"
+            onClick={handleContinueAssessment}
           >
             Continue Assessment
           </Button>
