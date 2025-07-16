@@ -70,20 +70,20 @@
   --popover: #ffffff;
   --popover-foreground: #212529;
 
-  /* Primary colors - DILG Blue */
-  --primary: #1a3a6d;
+  /* Primary colors - DILG Red */
+  --primary: #dc2626;
   --primary-foreground: #ffffff;
 
-  /* Secondary colors - Action Blue */
-  --secondary: #0d6efd;
+  /* Secondary colors - DILG Gold */
+  --secondary: #d97706;
   --secondary-foreground: #ffffff;
 
   /* Muted colors */
   --muted: #f8f9fa;
   --muted-foreground: #6c757d;
 
-  /* Accent colors */
-  --accent: #0d6efd;
+  /* Accent colors - DILG Gold */
+  --accent: #d97706;
   --accent-foreground: #ffffff;
 
   /* Destructive/error colors - Danger/Fail Red */
@@ -98,24 +98,24 @@
   /* Border and input styling */
   --border: #dee2e6;
   --input: #dee2e6;
-  --ring: #1a3a6d;
+  --ring: #dc2626;
 
   /* Chart colors */
-  --chart-1: #1a3a6d;
-  --chart-2: #0d6efd;
+  --chart-1: #dc2626;
+  --chart-2: #d97706;
   --chart-3: #28a745;
   --chart-4: #fd7e14;
   --chart-5: #dc3545;
 
   /* Sidebar colors */
-  --sidebar: #1a3a6d;
+  --sidebar: #dc2626;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #0d6efd;
+  --sidebar-primary: #d97706;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #0d6efd;
+  --sidebar-accent: #d97706;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #dee2e6;
-  --sidebar-ring: #1a3a6d;
+  --sidebar-ring: #dc2626;
 }
 
 /* ==========================================================================
@@ -135,20 +135,20 @@
   --popover: #343a40;
   --popover-foreground: #f8f9fa;
 
-  /* Primary colors - DILG Blue (slightly lighter for dark mode) */
-  --primary: #4a6fa5;
+  /* Primary colors - DILG Red (slightly lighter for dark mode) */
+  --primary: #ef4444;
   --primary-foreground: #ffffff;
 
-  /* Secondary colors - Action Blue */
-  --secondary: #0d6efd;
+  /* Secondary colors - DILG Gold */
+  --secondary: #f59e0b;
   --secondary-foreground: #ffffff;
 
   /* Muted colors */
   --muted: #495057;
   --muted-foreground: #adb5bd;
 
-  /* Accent colors */
-  --accent: #0d6efd;
+  /* Accent colors - DILG Gold */
+  --accent: #f59e0b;
   --accent-foreground: #ffffff;
 
   /* Destructive/error colors - Danger/Fail Red */
@@ -163,24 +163,24 @@
   /* Border and input styling */
   --border: #495057;
   --input: #495057;
-  --ring: #4a6fa5;
+  --ring: #ef4444;
 
   /* Chart colors */
-  --chart-1: #4a6fa5;
-  --chart-2: #0d6efd;
+  --chart-1: #ef4444;
+  --chart-2: #f59e0b;
   --chart-3: #28a745;
   --chart-4: #fd7e14;
   --chart-5: #dc3545;
 
   /* Sidebar colors */
-  --sidebar: #1a3a6d;
+  --sidebar: #dc2626;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #0d6efd;
+  --sidebar-primary: #f59e0b;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #0d6efd;
+  --sidebar-accent: #f59e0b;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #495057;
-  --sidebar-ring: #4a6fa5;
+  --sidebar-ring: #ef4444;
 }
 
 /* ==========================================================================

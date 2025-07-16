@@ -28,7 +28,7 @@ export function LoginForm() {
               htmlFor="email"
               className="block text-xs lg:text-sm font-semibold text-gray-800 mb-1 lg:mb-2"
             >
-              Email address
+              Email Address
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-2 lg:pl-3 xl:pl-4 flex items-center pointer-events-none z-10">
@@ -75,7 +75,7 @@ export function LoginForm() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-3 w-3 lg:h-4 lg:w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded transition-all duration-200"
+                className="h-3 w-3 lg:h-4 lg:w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded transition-all duration-200 accent-red-600"
               />
               <label
                 htmlFor="remember-me"
@@ -84,18 +84,13 @@ export function LoginForm() {
                 Remember me
               </label>
             </div>
-            <Link
-              href="/forgot-password"
-              className="text-xs lg:text-sm text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 hover:underline"
-            >
-              Forgot password?
-            </Link>
           </div>
 
           {/* Sign In Button */}
           <div className="pt-1 lg:pt-2">
             <Button
               type="submit"
+              variant="default"
               className="w-full h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
             >
               Sign in
@@ -103,7 +98,7 @@ export function LoginForm() {
           </div>
 
           {/* Divider */}
-          <div className="relative py-1 lg:py-2">
+          {/* <div className="relative py-1 lg:py-2">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200" />
             </div>
@@ -112,21 +107,21 @@ export function LoginForm() {
                 Or continue with
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Google Sign In */}
-          <Button
+          {/* <Button
             type="button"
             variant="secondary"
             className="w-full h-8 lg:h-9 xl:h-10 text-xs lg:text-sm xl:text-base font-semibold"
           >
             <FaGoogle className="w-3 h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 mr-1 lg:mr-2" />
             Sign in with Google
-          </Button>
+          </Button> */}
 
           {/* Sign Up Link */}
           <p className="text-center text-xs lg:text-sm text-gray-600 pt-1">
-            For account requests, please contact your DILG Administrator.
+            For account assistance, please contact your DILG Administrator.
           </p>
         </form>
       </div>

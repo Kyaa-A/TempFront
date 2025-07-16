@@ -17,7 +17,7 @@ export function BarangayFooter() {
           </div>
 
           {/* Copyright */}
-          <div className="text-right text-gray-400">
+          <div className="text-right">
             &copy; 2024 DILG-Sulop | The VANTAGE Project
           </div>
         </div>
