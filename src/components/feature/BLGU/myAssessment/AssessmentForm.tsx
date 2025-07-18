@@ -3,19 +3,19 @@ import { Button } from "@/components/ui/button";
 import { AssessmentSection } from "./assessmentTypes";
 import { SectionTabs } from "./SectionTabs";
 import { AssessmentItemCard } from "./AssessmentItemCard";
-import { BbiTable } from "./BbiTable";
 import { AssessmentModal } from "./AssessmentModal";
 
 export const AssessmentForm = () => {
   const [assessmentSections] = useState<AssessmentSection[]>([
     {
       id: "financial",
-      title: "Financial Admin",
+      title: "Financial Administration",
       items: [
         {
           id: "financial-1",
           title: "Structure: Organized BADAC",
-          description: "The barangay has established and organized a Barangay Anti-Drug Abuse Council (BADAC) in accordance with RA 9165 and its implementing rules and regulations.",
+          description:
+            "The barangay has established and organized a Barangay Anti-Drug Abuse Council (BADAC) in accordance with RA 9165 and its implementing rules and regulations.",
           status: "compliant",
         },
         {
@@ -69,6 +69,24 @@ export const AssessmentForm = () => {
       ],
     },
     {
+      id: "environmental",
+      title: "Environmental Management",
+      items: [
+        {
+          id: "environmental-1",
+          title: "Waste Management Program",
+          description: "Comprehensive waste management and disposal system",
+          status: "pending",
+        },
+        {
+          id: "environmental-2",
+          title: "Environmental Protection Initiatives",
+          description: "Programs for environmental conservation and protection",
+          status: "compliant",
+        },
+      ],
+    },
+    {
       id: "social",
       title: "Social Protection",
       items: [
@@ -87,32 +105,20 @@ export const AssessmentForm = () => {
       ],
     },
     {
-      id: "bbi",
-      title: "BBI Functionality",
+      id: "business",
+      title: "Business-Friendliness and Competitiveness",
       items: [
         {
-          id: "bbi-1",
-          title: "Barangay Development Council (BDC)",
-          description: "Organized and functional barangay development council",
-          status: "compliant",
-        },
-        {
-          id: "bbi-2",
-          title: "Barangay Tanod",
-          description: "Active barangay peacekeeping force",
-          status: "compliant",
-        },
-        {
-          id: "bbi-3",
-          title: "Barangay Health Workers",
-          description: "Organized community health workers",
+          id: "business-1",
+          title: "Business Registration Process",
+          description: "Streamlined business registration and licensing procedures",
           status: "rework-needed",
         },
         {
-          id: "bbi-4",
-          title: "Lupong Tagapamayapa",
-          description: "Functional barangay justice system",
-          status: "compliant",
+          id: "business-2",
+          title: "Investment Promotion",
+          description: "Programs to attract and support local businesses",
+          status: "pending",
         },
       ],
     },
@@ -120,14 +126,16 @@ export const AssessmentForm = () => {
 
   const [activeSection, setActiveSection] = useState<string>("financial");
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
-  const [selfAssessments, setSelfAssessments] = useState<Record<string, boolean>>({
+  const [selfAssessments, setSelfAssessments] = useState<
+    Record<string, boolean>
+  >({
     "financial-1": true, // Default to Yes for the first item to show the file upload
   });
   const [explanations, setExplanations] = useState<Record<string, string>>({});
   const [uploadedFiles, setUploadedFiles] = useState<Record<string, File[]>>({
     "financial-1": [
-      new File([""], "EO_BADAC_2023.pdf", { type: "application/pdf" })
-    ]
+      new File([""], "EO_BADAC_2023.pdf", { type: "application/pdf" }),
+    ],
   });
 
   // Check if all assessment items are compliant
@@ -144,45 +152,47 @@ export const AssessmentForm = () => {
   };
 
   const handleSelfAssessmentChange = (itemId: string, value: boolean) => {
-    setSelfAssessments(prev => ({
+    setSelfAssessments((prev) => ({
       ...prev,
-      [itemId]: value
+      [itemId]: value,
     }));
   };
 
   const handleExplanationChange = (itemId: string, value: string) => {
-    setExplanations(prev => ({
+    setExplanations((prev) => ({
       ...prev,
-      [itemId]: value
+      [itemId]: value,
     }));
   };
 
   const handleFileUpload = (itemId: string, files: FileList) => {
     const newFiles = Array.from(files);
-    setUploadedFiles(prev => ({
+    setUploadedFiles((prev) => ({
       ...prev,
-      [itemId]: [...(prev[itemId] || []), ...newFiles]
+      [itemId]: [...(prev[itemId] || []), ...newFiles],
     }));
   };
 
   const handleFileRemove = (itemId: string, fileIndex: number) => {
-    setUploadedFiles(prev => ({
+    setUploadedFiles((prev) => ({
       ...prev,
-      [itemId]: prev[itemId]?.filter((_, index) => index !== fileIndex) || []
+      [itemId]: prev[itemId]?.filter((_, index) => index !== fileIndex) || [],
     }));
   };
 
   const getSelectedItemData = () => {
     if (!selectedItem) return null;
-    
+
     for (const section of assessmentSections) {
-      const item = section.items.find(i => i.id === selectedItem);
+      const item = section.items.find((i) => i.id === selectedItem);
       if (item) return item;
     }
     return null;
   };
 
-  const currentSection = assessmentSections.find(section => section.id === activeSection);
+  const currentSection = assessmentSections.find(
+    (section) => section.id === activeSection
+  );
 
   return (
     <div className="space-y-6">
@@ -206,29 +216,31 @@ export const AssessmentForm = () => {
       />
 
       {/* Assessment Items */}
-      {activeSection === "bbi" ? (
-        <BbiTable items={currentSection?.items || []} />
-      ) : (
-        <div className="space-y-4">
-          {currentSection?.items.map((item) => (
-            <AssessmentItemCard
-              key={item.id}
-              item={item}
-              onClick={handleItemClick}
-            />
-          ))}
-        </div>
-      )}
+      <div className="space-y-4">
+        {currentSection?.items.map((item) => (
+          <AssessmentItemCard
+            key={item.id}
+            item={item}
+            onClick={handleItemClick}
+          />
+        ))}
+      </div>
 
       {/* Assessment Modal */}
       <AssessmentModal
         selectedItem={getSelectedItemData()}
-        selfAssessment={selectedItem ? selfAssessments[selectedItem] : undefined}
+        selfAssessment={
+          selectedItem ? selfAssessments[selectedItem] : undefined
+        }
         explanation={selectedItem ? explanations[selectedItem] || "" : ""}
         uploadedFiles={selectedItem ? uploadedFiles[selectedItem] || [] : []}
         onClose={handleCloseModal}
-        onSelfAssessmentChange={(value) => selectedItem && handleSelfAssessmentChange(selectedItem, value)}
-        onExplanationChange={(value) => selectedItem && handleExplanationChange(selectedItem, value)}
+        onSelfAssessmentChange={(value) =>
+          selectedItem && handleSelfAssessmentChange(selectedItem, value)
+        }
+        onExplanationChange={(value) =>
+          selectedItem && handleExplanationChange(selectedItem, value)
+        }
         onFileUpload={handleFileUpload}
         onFileRemove={handleFileRemove}
       />
